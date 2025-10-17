@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kue Ulang Tahun 🎂</title>
+  <link rel="stylesheet" href="work1.css">
+</head>
+<body>
+  <div class="intro" id="intro">
+    <h1 class="letters">
+      <span>H</span><span>A</span><span>P</span><span>P</span><span>Y</span>
+      <span>&nbsp;</span><span>B</span><span>I</span><span>R</span><span>T</span><span>H</span><span>D</span><span>A</span><span>Y</span>
+    </h1>
+    <p class="subtitle">Hallo put, silahkan sentuh tombol dibawah yaa...😇😇</p>
+    <button id="showCake">🎂 Sentuh aku 👉👈 </button>
+  </div>
+
+  <div class="cake-scene" id="cakeScene">
+    <div class="cake">
+      <div class="plate"></div>
+      <div class="layer layer1"></div>
+      <div class="layer layer2"></div>
+      <div class="layer layer3"></div>
+      <div class="candles">
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="message" id="message">Selamat Ulang Tahun Putri...🎉<br><span>Barakallahu fi umrik. Semoga Allah selalu memberkahimu dengan umur yang bermanfaat, rezeki yang halal, dan hati yang penuh syukur<br>Semoga hari-harimu dipenuhi dengan kebahagiaan, diberi sehat baik fisik maupun psikis, <br>menjadi pribadi yang bermanfaat bagi keluarga, masyarakat, dan negara.<br>Semangat ya.. sekolahnya😇 <br><br><h6>maaf cuma bisa kasih ini😔</h6></span></h2>
+  </div>
+
+  <script>
+    const btn = document.getElementById('showCake');
+    const intro = document.getElementById('intro');
+    const cakeScene = document.getElementById('cakeScene');
+    const message = document.getElementById('message');
+
+    btn.addEventListener('click', () => {
+      intro.classList.add('fade-out');
+      setTimeout(() => {
+        intro.style.display = 'none';
+        cakeScene.style.display = 'flex';
+        setTimeout(() => cakeScene.classList.add('show'), 500);
+        setTimeout(() => message.classList.add('show'), 4000);
+      }, 800);
+    });
+  </script>
+</body>
+</html>

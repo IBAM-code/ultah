@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: radial-gradient(circle at center, #0b0b0b, #000);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  background-image: url(bgg.jpg);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== INTRO ===== */
+.intro {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 1s;
+}
+.intro.fade-out {
+  opacity: 0;
+}
+.letters span {
+  font-size: 2em;
+  color: #ff6bcd;
+  opacity: 0;
+  display: inline-block;
+  text-shadow: 0 0 10px #ff6bcd, 0 0 30px #ff0095;
+  animation: fadeLetter 0.6s forwards;
+}
+.letters span:nth-child(odd) { animation-delay: calc(var(--i, 1) * 1.4s); }
+.letters span:nth-child(even) { animation-delay: calc(var(--i, 1) * 2s); }
+
+@keyframes fadeLetter {
+  from { transform: translateY(40px) scale(0.8); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.subtitle {
+  margin-top: 20px;
+  color: #ccc;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 2.5s;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  border: 2px solid #ff6bcd;
+  background: transparent;
+  color: #ff6bcd;
+  font-size: 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 3.2s;
+  transition: 0.3s;
+}
+button:hover {
+  background: #ff6bcd;
+  color: #000;
+  box-shadow: 0 0 20px #ff6bcd, 0 0 40px #ff6bcd;
+}
+
+/* ===== CAKE SCENE ===== */
+.cake-scene {
+  display: none;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.cake-scene.show .cake {
+  animation: riseCake 3s ease-out forwards;
+}
+@keyframes riseCake {
+  from { transform: translateY(100%) scale(0.8); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* ===== CAKE ===== */
+.cake {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  transform: translateY(100%);
+  opacity: 0;
+}
+.plate {
+  position: absolute;
+  bottom: 0;
+  width: 240px;
+  height: 30px;
+  background: radial-gradient(circle, #888, #333);
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+.layer1 {
+  bottom: 30px;
+  width: 200px;
+  height: 40px;
+  background: linear-gradient(to bottom, #ff7fcf, #e64bb5);
+}
+.layer2 {
+  bottom: 70px;
+  width: 180px;
+  height: 40px;
+  background: linear-gradient(to bottom, #ffd3e8, #ffa6d0);
+}
+.layer3 {
+  bottom: 110px;
+  width: 160px;
+  height: 40px;
+  background: linear-gradient(to bottom, #fff3fb, #ffbde4);
+}
+
+/* ===== CANDLES ===== */
+.candles {
+  position: absolute;
+  bottom: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.candle {
+  width: 10px;
+  height: 35px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #fff,
+    #fff 4px,
+    #ff8ac9 4px,
+    #ff8ac9 8px
+  );
+  position: relative;
+  border-radius: 5px;
+}
+.flame {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 20px;
+  background: radial-gradient(circle, #ffd700, #ff6600);
+  border-radius: 50% 50% 45% 45%;
+  animation: flicker 0.15s infinite alternate;
+  box-shadow: 0 0 20px #ff9900, 0 0 40px #ff6600;
+}
+@keyframes flicker {
+  from { transform: translateX(-50%) scale(1); opacity: 1; }
+  to { transform: translateX(-50%) scale(0.9); opacity: 0.8; }
+}
+
+/* ===== MESSAGE ===== */
+.message {
+  position: absolute;
+  top: 15%;
+  text-align: center;
+  width: 100%;
+  font-size: 28px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 2s ease;
+  text-shadow: 0 0 15px #ff6bcd, 0 0 40px #ff0095;
+}
+.message span {
+  font-size: 20px;
+  color: #ffb8e6;
+}
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.messsage {
+  position: absolute;
+  top: 15%;
+  text-align: center;
+  width: 100%;
+  font-size: 28px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 2s ease;
+  text-shadow: 0 0 15px #ff6bcd, 0 0 40px #ff0095;
+}
+.messsage span {
+  font-size: 20px;
+  color: #ffb8e6;
+}
+.messsage.show {
+  opacity: 1;
+  transform: translateY(0);
+}
